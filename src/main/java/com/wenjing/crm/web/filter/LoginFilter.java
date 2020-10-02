@@ -1,5 +1,7 @@
 package com.wenjing.crm.web.filter;
 
+import com.wenjing.crm.settings.domain.User;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,11 +15,13 @@ public class LoginFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) resp;
 
         HttpSession session = request.getSession(false);
-        if ("/login.jsp".equals(request.getServletPath()) || "/settings/user/login.do".equals(request.getServletPath())) {
+        User user = (User) session.getAttribute("User");
+        String path = request.getServletPath();
+        if ("/login.jsp".equals(path) || "/settings/user/login.do".equals(path)) {
             //登录相关资源放行
             chain.doFilter(req, resp);
         } else {
-            if (session != null) {
+            if (user != null) {
                 //有session，登陆过，放行
 
                 chain.doFilter(req, resp);
