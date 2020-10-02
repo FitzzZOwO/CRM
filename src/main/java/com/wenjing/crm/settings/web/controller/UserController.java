@@ -17,12 +17,12 @@ import java.util.Map;
 
 public class UserController extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest requst, HttpServletResponse response) throws ServletException, IOException {
-        String s = requst.getServletPath();
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String s = request.getServletPath();
         if ("/settings/user/login.do".equals(s)) {
-            login(requst, response);
+            login(request, response);
         } else if ("/settings/user/xxx.do".equals(s)) {
-            //xxx(requst, response);
+            //xxx(request, response);
         }
     }
 
@@ -32,7 +32,7 @@ public class UserController extends HttpServlet {
         String loginAct = request.getParameter("loginAct");
         String loginPwd = request.getParameter("loginPwd");
         //密码加密存储
-        loginPwd = MD5Util.getMD5(loginPwd);
+        loginPwd= MD5Util.getMD5(loginPwd);
         String ip = request.getRemoteAddr();
         System.out.println("===========================当前请求ip:" + ip);
         UserService us = (UserService) ServiceFactory.getService(new UserServiceImpl());
@@ -49,7 +49,6 @@ public class UserController extends HttpServlet {
             PrintJson.printJsonFlag(response, true);
         } catch (Exception e) {
             e.printStackTrace();
-
             /*
             登陆失败返回格式：
                 data

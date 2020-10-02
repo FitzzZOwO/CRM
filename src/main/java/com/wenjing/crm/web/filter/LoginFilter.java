@@ -13,22 +13,19 @@ public class LoginFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
-
-        HttpSession session = request.getSession(false);
-        User user = (User) session.getAttribute("User");
         String path = request.getServletPath();
         if ("/login.jsp".equals(path) || "/settings/user/login.do".equals(path)) {
             //登录相关资源放行
             chain.doFilter(req, resp);
         } else {
+            HttpSession session = request.getSession();
+            User user = (User) session.getAttribute("user");
             if (user != null) {
                 //有session，登陆过，放行
-
                 chain.doFilter(req, resp);
-
             } else {
                 //未登录，重定向
-                response.sendRedirect("/login.jsp");
+                response.sendRedirect("/crm/login.jsp");
             }
         }
 
