@@ -1,4 +1,4 @@
-package com.wenjing.crm.settings.exception;
+package com.wenjing.crm.exception;
 
 public class LoginException extends Exception {
 

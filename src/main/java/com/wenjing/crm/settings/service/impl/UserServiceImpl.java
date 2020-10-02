@@ -2,7 +2,7 @@ package com.wenjing.crm.settings.service.impl;
 
 import com.wenjing.crm.settings.dao.UserDao;
 import com.wenjing.crm.settings.domain.User;
-import com.wenjing.crm.settings.exception.LoginException;
+import com.wenjing.crm.exception.LoginException;
 import com.wenjing.crm.settings.service.UserService;
 import com.wenjing.crm.util.DateTimeUtil;
 import com.wenjing.crm.util.SqlSessionUtil;

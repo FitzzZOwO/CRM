@@ -15,7 +15,9 @@
     <script>
         $(
             function () {
-
+                if (window.top != window) {
+                    windowtop.location = window.location;
+                }
                 $("#loginAct").val("");   //清空历史残留内容
                 $("#loginAct").focus();
                 $("#loginBtn").click(function () {
