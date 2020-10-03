@@ -1,6 +1,4 @@
 package com.wenjing.crm.workbench.domain;
-
-
 public class ActivityRemark {
 
     private String id;

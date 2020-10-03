@@ -1,4 +1,4 @@
-package com.wenjing.crm.util;
+package com.wenjing.crm.utils;
 
 import java.io.IOException;
 import java.util.HashMap;

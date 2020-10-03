@@ -1,6 +1,5 @@
 package com.wenjing.crm.workbench.domain;
 
-
 public class Activity {
 
     private String id;  //主键

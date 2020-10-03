@@ -3,9 +3,9 @@ package com.wenjing.crm.settings.web.controller;
 import com.wenjing.crm.settings.domain.User;
 import com.wenjing.crm.settings.service.UserService;
 import com.wenjing.crm.settings.service.impl.UserServiceImpl;
-import com.wenjing.crm.util.MD5Util;
-import com.wenjing.crm.util.PrintJson;
-import com.wenjing.crm.util.ServiceFactory;
+import com.wenjing.crm.utils.MD5Util;
+import com.wenjing.crm.utils.PrintJson;
+import com.wenjing.crm.utils.ServiceFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

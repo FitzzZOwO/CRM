@@ -9,7 +9,8 @@
   <typeAliases>
   
   	<package name="com.wenjing.crm.settings.domain"/>
-  	
+  	<package name="com.wenjing.crm.workbench.domain"/>
+
   
   </typeAliases>
   
@@ -29,7 +30,8 @@
   <mappers>
    
       <package name="com.wenjing.crm.settings.dao"/>
-    
+      <package name="com.wenjing.crm.workbench.dao"/>
+
   </mappers>
 </configuration>
 

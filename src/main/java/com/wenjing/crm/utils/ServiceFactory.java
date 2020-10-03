@@ -1,4 +1,4 @@
-package com.wenjing.crm.util;
+package com.wenjing.crm.utils;
 
 public class ServiceFactory {
 	

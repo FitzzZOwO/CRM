@@ -1,4 +1,4 @@
-package com.wenjing.crm.util;
+package com.wenjing.crm.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

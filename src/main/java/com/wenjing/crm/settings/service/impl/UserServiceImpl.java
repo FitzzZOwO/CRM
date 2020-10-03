@@ -4,10 +4,11 @@ import com.wenjing.crm.settings.dao.UserDao;
 import com.wenjing.crm.settings.domain.User;
 import com.wenjing.crm.exception.LoginException;
 import com.wenjing.crm.settings.service.UserService;
-import com.wenjing.crm.util.DateTimeUtil;
-import com.wenjing.crm.util.SqlSessionUtil;
+import com.wenjing.crm.utils.DateTimeUtil;
+import com.wenjing.crm.utils.SqlSessionUtil;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserServiceImpl implements UserService {
@@ -16,7 +17,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User login(String loginAct, String loginPwd, String ip) throws LoginException {
 
-        Map<String, Object> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("loginAct", loginAct);
         map.put("loginPwd", loginPwd);
 
@@ -60,5 +61,10 @@ public class UserServiceImpl implements UserService {
 
         return user;
 
+    }
+
+    @Override
+    public List<User> getUserList() {
+        return userDao.getUserList();
     }
 }
